@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #EAECEE;
+    margin: 0;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background: #28A745;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    font-size: 60px;
+    color: #fff;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo i {
+    margin-right: 10px;
+    font-size: 26px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    color: #FFCC00;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #28A745;
+    font-size: 28px;
+}
+
+header p {
+    color: #666;
+}
+
+.balance-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.balance-card h2 {
+    color: #28A745;
+    margin-bottom: 10px;
+}
+
+.balance {
+    font-size: 32px;
+    color: #28A745;
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.action-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFC107;
+    color: black;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.action-circle i {
+    font-size: 24px;
+}
+
+.action-circle .label {
+    display: none;
+    position: absolute;
+    bottom: -25px;
+    text-align: center;
+}
+
+.action-circle:hover {
+    background: #FFA000;
+    transform: scale(1.1);
+}
+
+.action-circle:hover .label {
+    display: block;
+}
+
+.transaction-history,
+.payment-methods {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.transaction-history h3,
+.payment-methods h3 {
+    color: #28A745;
+}
+
+#transaction-list,
+#payment-list {
+    list-style: none;
+    padding: 0;
+}
+
+#transaction-list li,
+#payment-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.payment-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.view-more {
+    margin-top: 10px;
+    background: #28A745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-more:hover {
+    background: #218838;
+}
+
+.action-button {
+    margin-top: 10px;
+    background: #28A745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.action-button:hover {
+    background: #218838;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    animation: popUp 0.4s forwards;
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Form styling */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.close {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: -10px;
+    margin-right: -10px;
+}
+
+/* Responsive styling for mobile */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+.transaction-history {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.transaction-history h3 {
+    color: #28A745;
+}
+
+#transaction-list {
+    list-style: none;
+    padding: 0;
+}
+
+#transaction-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

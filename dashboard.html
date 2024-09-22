@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>LinkPay - Dashboard</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h3 id="profile-name">User Name</h3>
+                <p id="profile-email">user@example.com</p>
+                <p id="profile-mobile">Mobile Number</p>
+            </div>
+
+            <h2 class="sidebar-logo">
+                <i class="fas fa-wallet"></i> LinkPay
+            </h2>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-money-bill-wave"></i> Transactions</a></li>
+                <li><a href="#"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <header>
+                <h1>Welcome Back!</h1>
+                <p>Manage your finances effortlessly.</p>
+            </header>
+            <div class="balance-card">
+                <h2>Current Balance</h2>
+                <p class="balance">&#8369; <span id="balance">0.00</span></p>
+            </div>
+            <div class="quick-actions">
+                <div class="action-circle">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="label">Send</span>
+                </div>
+                <div class="action-circle">
+                    <i class="fas fa-plus-circle"></i>
+                    <span class="label">Receive</span>
+                </div>
+                <div class="action-circle">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span class="label">Pay Bills</span>
+                </div>
+            </div>
+            <div class="transaction-history">
+                <h3>Recent Transactions</h3>
+                <ul id="transaction-list"></ul>
+                <button class="view-more">View All Transactions</button>
+            </div>
+            <div class="payment-methods">
+                <h3>Payment Methods</h3>
+                <div class="payment-list" id="payment-list"></div>
+                <button class="action-button">Add Payment Method</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Money Modal -->
+    <div id="sendModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Send Money</h3>
+            <form id="send-form" class="modal-form">
+                <label for="recipient">Recipient:</label>
+                <input type="text" id="recipient" required>
+
+                <label for="amount-send">Amount:</label>
+                <input type="number" id="amount-send" required>
+
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Receive Money Modal -->
+    <div id="receiveModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Receive Money</h3>
+            <form id="receive-form" class="modal-form">
+                <label for="sender">Sender:</label>
+                <input type="text" id="sender" required>
+
+                <label for="amount-receive">Amount:</label>
+                <input type="number" id="amount-receive" required>
+
+                <button type="submit" class="submit-button">Receive</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pay Bills Modal -->
+    <div id="payBillsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Pay Bills</h3>
+            <form id="pay-bills-form" class="modal-form">
+                <label for="billType">Bill Type:</label>
+                <input type="text" id="billType" required>
+
+                <label for="amount-bill">Amount:</label>
+                <input type="number" id="amount-bill" required>
+
+                <button type="submit" class="submit-button">Pay</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Payment Method Modal -->
+    <div id="addPaymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Payment Method</h3>
+            <form id="add-payment-method-form" class="modal-form">
+                <label for="method-name">Payment Method Name:</label>
+                <input type="text" id="method-name" required>
+
+                <button type="submit" class="submit-button">Add Method</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

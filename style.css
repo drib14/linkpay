@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo i {
+    font-size: 50px;
+    color: #007BFF;
+}
+
+.logo h1 {
+    color: #007BFF;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    color: #007BFF;
+}
+
+input {
+    padding: 12px 10px 12px 50px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s;
+    margin-bottom: 15px;
+    /* Add margin below the button */
+}
+
+button:hover {
+    background: #218838;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    /* Add margin below the paragraph */
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.message-box {
+    display: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
